@@ -15,5 +15,10 @@ export default () => {
     localStorage.setItem('projects', JSON.stringify(projects));
   };
 
-  return { addProject };
+  const addProjectTodo = (id, todo) => {
+    projects[id].todos.push(todo);
+    localStorage.setItem('projects', JSON.stringify(projects));
+  };
+
+  return { addProject, addProjectTodo };
 };
