@@ -15,6 +15,9 @@ projects.forEach((project, idx) => {
   const add = document.getElementById(addId);
   add.onclick = () => {
     Event().removeElements('content', 'form');
+    const testProject = {
+      title: 'Meet sheila', description: 'Picnic with Sheila at the park.', dueDate: '2020-10-15', priority: 'High',
+    };
     const formDisplay = document.getElementById('addTodoForm');
     formDisplay.appendChild(element('h3', `Add todo for ${project.name}`, 'my-2', 'text-center', 'font-weight-bold'));
     formDisplay.appendChild(todoForm(idx));
