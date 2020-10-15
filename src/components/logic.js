@@ -1,3 +1,5 @@
-export const submitData = () => {
-  const name = document.getElementById('name').value;
+export default () => {
+  const removeElements = (...elements) => elements.forEach((el) => document.getElementById(el).remove());
+
+  return { removeElements };
 };
