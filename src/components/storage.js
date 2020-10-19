@@ -1,4 +1,4 @@
-import Project from './project.js';
+import Project from './project';
 
 export const projects = localStorage.getItem('projects')
   ? JSON.parse(localStorage.getItem('projects'))

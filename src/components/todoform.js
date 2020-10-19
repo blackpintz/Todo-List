@@ -1,4 +1,4 @@
-import elements from './elements.js';
+import elements from './elements';
 
 const inputElement = (id, type, inputname, value) => {
   const checkValue = value !== undefined ? value : '';
@@ -7,6 +7,7 @@ const inputElement = (id, type, inputname, value) => {
   const labelTag = elements().element('label', inputname);
   labelTag.setAttribute('for', id);
   const inputTag = elements().element('input', '', 'form-control');
+  inputTag.required = true;
   inputTag.setAttribute('type', type);
   inputTag.setAttribute('id', id);
   inputTag.setAttribute('placeholder', inputname);

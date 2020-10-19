@@ -1,6 +1,6 @@
-import elements from './elements.js';
-import { todoForm } from './todoform.js';
-import projectModule, { projects } from './storage.js';
+import elements from './elements';
+import { todoForm } from './todoform';
+import projectModule, { projects } from './storage';
 
 export default (project) => {
   const todosWrapper = document.createElement('div');
