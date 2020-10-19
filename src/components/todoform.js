@@ -13,11 +13,6 @@ const inputElement = (id, type, inputname, value) => {
   inputTag.setAttribute('value', checkValue);
   formDiv.appendChild(labelTag);
   formDiv.appendChild(inputTag);
-  // formDiv.innerHTML = `
-  //   <label for=${id}>${inputname}</label>
-  //   <input type=${type} class='form-control' id=${id} placeholder=${inputname} required value=${checkValue} >
-  //   `;
-  console.log(value);
   return formDiv;
 };
 
@@ -32,7 +27,7 @@ const checkBox = (id, project = {}) => {
   return checkDiv;
 };
 
-export const todoForm = (id, project = {}) => {
+export const todoForm = (id, action, project = {}) => {
   const checkBoxes = document.createElement('div');
   checkBoxes.className = 'form-group col-9';
   checkBoxes.appendChild(checkBox('high', project));
@@ -41,7 +36,7 @@ export const todoForm = (id, project = {}) => {
   const todoBtn = document.createElement('div');
   todoBtn.className = 'col-9 mb-2';
   todoBtn.innerHTML = `
-    <button class='btn btn-block btn-success' id=${id} type='submit'>Add todo</button>
+    <button class='btn btn-block btn-success' id=${id} type='submit'>${action} todo</button>
     `;
   const formRow = document.createElement('div');
   formRow.className = 'row w-50 mx-auto';

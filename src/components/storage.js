@@ -20,5 +20,21 @@ export default () => {
     localStorage.setItem('projects', JSON.stringify(projects));
   };
 
-  return { addProject, addProjectTodo };
+  const editProjectTodo = (id, todo) => {
+    const foundTodo = projects[id].todos.find(originalTodo => originalTodo.title === todo.title);
+    foundTodo.description = todo.description;
+    foundTodo.dueDate = todo.dueDate;
+    foundTodo.priority = todo.priority;
+    localStorage.setItem('projects', JSON.stringify(projects));
+  };
+
+  const deleteProjectTodo = (id, todo) => {
+    const index = projects[id].todos.indexOf(todo);
+    projects[id].todos.splice(index, 1);
+    localStorage.setItem('projects', JSON.stringify(projects));
+  };
+
+  return {
+    addProject, addProjectTodo, editProjectTodo, deleteProjectTodo,
+  };
 };

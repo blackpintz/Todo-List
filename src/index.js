@@ -20,7 +20,7 @@ projects.forEach((project, idx) => {
     };
     const formDisplay = document.getElementById('addTodoForm');
     formDisplay.appendChild(element('h3', `Add todo for ${project.name}`, 'my-2', 'text-center', 'font-weight-bold'));
-    formDisplay.appendChild(todoForm(idx));
+    formDisplay.appendChild(todoForm(idx, 'Add'));
     const goBack = element('button', 'Go back', 'btn', 'btn-secondary', 'w-100');
     goBack.onclick = () => { window.location.reload(); };
     formDisplay.appendChild(goBack);
@@ -30,7 +30,7 @@ projects.forEach((project, idx) => {
   view.onclick = () => {
     Event().removeElements('content', 'form');
     const todosDisplay = document.querySelector('main');
-    todosDisplay.appendChild(viewTodo(project));
+    todosDisplay.appendChild(viewTodo(project).todosWrapper);
   };
 });
 
@@ -55,6 +55,3 @@ addTodoForm.addEventListener('submit', (e) => {
   const newTodo = new Todo(title, description, due, priority);
   projectModule().addProjectTodo(id, newTodo);
 });
-
-
-console.log(localStorage);
