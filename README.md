@@ -1,4 +1,4 @@
-### Tic Tac Toe Game
+### Todo list application.
 
 ## Description
 

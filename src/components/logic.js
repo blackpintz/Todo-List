@@ -10,7 +10,7 @@ export default () => {
     const projectTag = document.createElement('h3');
     const addId = `add-${idx}`;
     const viewId = `view-${idx}`;
-    projectTag.innerHTML = `${project.name} <small id=${addId} class='text-info'>add</small> <small id=${viewId} class='text-info'>view</small>`;
+    projectTag.innerHTML = `${project.name} <small id=${addId} class='text-info ml-5'>add-todo</small> <small id=${viewId} class='text-info'>show-todos</small>`;
     content.appendChild(projectTag);
     const add = document.getElementById(addId);
     add.onclick = () => {
