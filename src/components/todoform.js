@@ -28,7 +28,7 @@ const checkBox = (id, project = {}) => {
   return checkDiv;
 };
 
-export const todoForm = (id, action, project = {}) => {
+export default (id, action, project = {}) => {
   const checkBoxes = document.createElement('div');
   checkBoxes.className = 'form-group col-9';
   checkBoxes.appendChild(checkBox('high', project));
@@ -41,6 +41,7 @@ export const todoForm = (id, action, project = {}) => {
     `;
   const formRow = document.createElement('div');
   formRow.className = 'row w-50 mx-auto';
+  formRow.appendChild(inputElement(project.id, 'hidden', ''));
   formRow.appendChild(inputElement('titleId', 'text', 'Title', project.title));
   formRow.appendChild(inputElement('descriptionId', 'text', 'Description', project.description));
   formRow.appendChild(inputElement('dateId', 'date', 'Due date', project.dueDate));

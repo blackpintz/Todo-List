@@ -9,9 +9,9 @@ export default () => {
   };
 
   const collectData = (event) => {
-    const title = event.target[0].value;
-    const description = event.target[1].value;
-    const due = event.target[2].value;
+    const title = event.target[1].value;
+    const description = event.target[2].value;
+    const due = event.target[3].value;
     let priority;
     if (document.getElementById('high').checked) priority = 'High';
     if (document.getElementById('medium').checked) priority = 'Medium';

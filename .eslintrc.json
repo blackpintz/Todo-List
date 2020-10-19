@@ -14,7 +14,10 @@
     "no-shadow": "off",
     "no-param-reassign": "off",
     "eol-last": "off",
-    "arrow-parens": "off"
+    "arrow-parens": "off",
+    "max-len": "off",
+    "no-alert": "off",
+    "radix":"off"
   },
   "ignorePatterns": [
     "dist/",

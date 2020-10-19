@@ -1,7 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import projectModule, { projects } from './storage';
-import Todo from './todo';
-import { todoForm } from './todoform';
+import todoForm from './todoform';
 import viewTodo from './viewTodo';
 import elements from './elements';
 
@@ -46,6 +45,5 @@ addTodoForm.addEventListener('submit', (e) => {
   const id = parseInt(e.submitter.id);
   const newTodo = elements().collectData(e);
   newTodo.id = uuidv4();
-  console.log(newTodo);
   projectModule().addProjectTodo(id, newTodo);
 });

@@ -1,5 +1,5 @@
 import elements from './elements';
-import { todoForm } from './todoform';
+import todoForm from './todoform';
 import projectModule, { projects } from './storage';
 
 export default (project) => {
@@ -8,7 +8,7 @@ export default (project) => {
   todosWrapper.className = 'container-fluid';
   todosWrapper.id = 'wrapper';
   todosWrapper.appendChild(todoFolder);
-  project.todos.forEach((todo, idx) => {
+  project.todos.forEach((todo) => {
     const {
       title, description, dueDate, priority,
     } = todo;
@@ -54,5 +54,6 @@ const editTodoForm = document.getElementById('editTodoForm');
 editTodoForm.addEventListener('submit', (e) => {
   const todo = elements().collectData(e);
   const { id } = e.submitter;
-  projectModule().editProjectTodo(id, todo);
+  const todoId = e.target[0].id;
+  projectModule().editProjectTodo(id, todoId, todo);
 });
