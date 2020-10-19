@@ -4,6 +4,7 @@
   "description": "todo",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack --mode development",
     "build": "webpack --config webpack.config.js"
   },
   "repository": {
