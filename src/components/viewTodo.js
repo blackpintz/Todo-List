@@ -15,6 +15,8 @@ export default (project) => {
     const groupBtns = elements().element('div', '', 'mb-3');
     const editBtn = elements().element('button', 'Edit', 'btn', 'btn-info', 'mr-2');
     const deleteBtn = elements().element('button', 'Delete', 'btn', 'btn-danger');
+    deleteBtn.setAttribute('data-toggle', 'modal');
+    deleteBtn.setAttribute('data-target', '#exampleModal');
     groupBtns.appendChild(editBtn);
     groupBtns.appendChild(deleteBtn);
     todosWrapper.appendChild(elements().element('h4', title, 'border-top'));
@@ -34,13 +36,14 @@ export default (project) => {
       formDisplay.appendChild(goBack);
     };
 
-    deleteBtn.onclick = () => {
-      if (window.confirm('Are you sure')) {
+    deleteBtn.addEventListener('click', () => {
+      const modalwindow = document.getElementById('modalBtn');
+      modalwindow.onclick = () => {
         const id = projects.indexOf(project);
         projectModule().deleteProjectTodo(id, todo);
         window.location.reload();
-      }
-    };
+      };
+    });
   });
   const goBack = elements().element('button', 'Go back', 'btn', 'btn-secondary', 'w-100');
   goBack.onclick = () => { window.location.reload(); };

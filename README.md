@@ -2,7 +2,7 @@
 
 ## Description
 
-The project builds a todo application. The todo lists are added into a category of the user's choice.
+The project builds a todo application. The user can create a category for todo lists.
 
 ![screenshot](./screenshots/todofolders.png)
 ![screenshot](./screenshots/todos.png)
