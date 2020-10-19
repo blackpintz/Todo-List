@@ -1,12 +1,12 @@
-import element from './elements.js';
+import elements from './elements.js';
 
 const inputElement = (id, type, inputname, value) => {
   const checkValue = value !== undefined ? value : '';
   const formDiv = document.createElement('div');
   formDiv.className = 'form-group col-9';
-  const labelTag = element('label', inputname);
+  const labelTag = elements().element('label', inputname);
   labelTag.setAttribute('for', id);
-  const inputTag = element('input', '', 'form-control');
+  const inputTag = elements().element('input', '', 'form-control');
   inputTag.setAttribute('type', type);
   inputTag.setAttribute('id', id);
   inputTag.setAttribute('placeholder', inputname);
@@ -21,7 +21,7 @@ const checkBox = (id, project = {}) => {
   const checkDiv = document.createElement('div');
   checkDiv.className = 'form-check form-check-inline';
   checkDiv.innerHTML = `
-     <input class="form-check-input" type="radio" name="inlineRadioOptions" id=${id} ${checkValue}>
+     <input class="form-check-input" type="radio" name="inlineRadioOptions" required id=${id} ${checkValue}>
      <label class="form-check-label text-capitalize" for="inlineRadio2">${id}</label>
     `;
   return checkDiv;
