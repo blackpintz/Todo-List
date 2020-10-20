@@ -14,7 +14,7 @@ The project builds a todo application. The user can create a category for todo l
 
 ## Live Demo 
 
-[Website link](https://rawcdn.githack.com/blackpintz/Todo-List/b2eed43c703ba40be3e8a461397798b3d96e4e4d/dist/index.html)
+[Website link](https://rawcdn.githack.com/blackpintz/Todo-List/2eefcc4974cb22fd5232f0e892b35d712d81ffc9/dist/index.html)
 
 ## Getting Started
 
